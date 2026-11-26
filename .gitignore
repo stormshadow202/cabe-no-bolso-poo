@@ -1,0 +1,14 @@
+# Java build output
+/bin/
+/out/
+**/out/
+*.class
+
+# IDE and operating system files
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local serialized planning data (may contain personal information)
+*.dat

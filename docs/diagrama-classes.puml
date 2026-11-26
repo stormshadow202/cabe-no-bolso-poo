@@ -1,0 +1,179 @@
+@startuml
+' Diagrama de classes UML - Cabe no bolso (versão da equipe)
+' Para gerar a imagem: cole em https://www.plantuml.com/plantuml ou use a extensão PlantUML do VS Code.
+' O posicionamento é automático e pode diferir do seu desenho; o conteúdo é o mesmo.
+title Diagrama de classes UML - Cabe no bolso
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle folder
+skinparam nodesep 45
+skinparam ranksep 55
+hide empty members
+
+' ---- tipos do Java (fora do projeto)
+interface "java.awt.event.ActionListener" as ActionListener
+interface "java.io.Serializable" as Serializable
+class "java.lang.Exception" as Exception
+
+' ---- pacote padrão (Main)
+class Main {
+  + main(args: String[]): void {static}
+}
+
+' ---- pacote visão
+package "visão" as p_visao #FFFFCC {
+  class Ui {
+    - controlador: Controlador
+    + Ui(controlador: Controlador)
+    + actionPerformed(e: ActionEvent): void
+    - editarParticipante(): void
+    - criarDespesa(): void
+    - editarDespesaSelecionada(): void
+    - carregarDespesaSelecionada(): void
+    - excluirDespesaSelecionada(): void
+    - salvarEmArquivo(): void
+    - carregarDeArquivo(): void
+    - atualizarListaParticipantes(): void
+    - atualizarPainelDespesa(): void
+    - mostrarResumo(): void
+    - mostrarAjuda(): void
+    - limparCamposParticipante(): void
+    - limparCamposDespesa(): void
+    - formatar(centavos: long): String
+  }
+
+}
+
+' ---- pacote controlador
+package "controlador" as p_controlador #CCFFCC {
+  class Controlador {
+    - planejamento: Planejamento
+    - persistencia: Persistencia {readOnly}
+    + Controlador(persistencia: Persistencia)
+    + salvarParticipante(codigo: String, nome: String, orcamento: String): void
+    + editarParticipante(codigo: String, nome: String, orcamento: String): void
+    + salvarDespesa(descricao: String, valor: String, porPessoa: boolean, selecionados: List<Participante>): void
+    + editarDespesa(indice: int, descricao: String, valor: String, porPessoa: boolean, selecionados: List<Participante>): void
+    + excluirDespesa(indice: int): void
+    + salvar(arquivo: File): void
+    + carregar(arquivo: File): void
+    + getParticipantes(): Collection<Participante>
+    + getDespesas(): List<Despesa>
+    + getCustoTotal(): long
+    + getTotalIndividual(p: Participante): long
+    + getExcedente(p: Participante): long
+    - criarDespesa(descricao: String, valor: String, porPessoa: boolean, selecionados: List<Participante>): Despesa
+    - lerCodigo(texto: String): int
+  }
+
+}
+
+' ---- pacote persistencia
+package "persistencia" as p_persistencia #CCCCFF {
+  interface Persistencia {
+    + salvar(planejamento: Planejamento, arquivo: File): void
+    + carregar(arquivo: File): Planejamento
+  }
+
+  class PersistenciaArquivo {
+    + salvar(planejamento: Planejamento, arquivo: File): void
+    + carregar(arquivo: File): Planejamento
+  }
+
+}
+
+' ---- pacote modelo
+package "modelo" as p_modelo #CCFFFF {
+  class Planejamento {
+    - serialVersionUID: long = 1L {static}
+    - participantes: TreeMap<Integer, Participante>
+    - despesas: ArrayList<Despesa>
+    + salvarParticipante(codigo: int, nome: String, orcamento: long): void
+    + editarParticipante(codigo: int, novoNome: String, novoOrcamento: long): void
+    + getParticipantes(): Collection<Participante>
+    + salvarDespesa(d: Despesa): void
+    + editarDespesa(indice: int, nova: Despesa): void
+    + excluirDespesa(indice: int): void
+    + getDespesas(): List<Despesa>
+    + getCustoTotal(): long
+    + getTotalIndividual(p: Participante): long
+    + getExcedente(p: Participante): long
+    - validarParticipantes(d: Despesa): void
+  }
+
+  class Participante {
+    - serialVersionUID: long = 1L {static}
+    - codigo: int
+    - nome: String
+    - orcamentoCentavos: long
+    + Participante(codigo: int, nome: String, orcamentoCentavos: long)
+    + alterar(novoNome: String, novoOrcamento: long): void
+    - validarNome(nome: String): void {static}
+    - validarOrcamento(centavos: long): void {static}
+    + getCodigo(): int
+    + getNome(): String
+    + getOrcamentoCentavos(): long
+    + toString(): String
+  }
+
+  abstract class Despesa {
+    - serialVersionUID: long = 1L {static}
+    - descricao: String
+    - valorCentavos: long
+    - participantes: List<Participante>
+    + Despesa(descricao: String, valorCentavos: long, participantes: List<Participante>)
+    + ratear(): Map<Integer, Long> {abstract}
+    + getContribuicao(p: Participante): long
+    + getCustoTotal(): long
+    + getDescricao(): String
+    + getValorCentavos(): long
+    + getParticipantes(): List<Participante>
+  }
+
+  class DespesaFixa {
+    - serialVersionUID: long = 1L {static}
+    + DespesaFixa(descricao: String, valorCentavos: long, participantes: List<Participante>)
+    + ratear(): Map<Integer, Long>
+  }
+
+  class DespesaPorPessoa {
+    - serialVersionUID: long = 1L {static}
+    + DespesaPorPessoa(descricao: String, valorCentavos: long, participantes: List<Participante>)
+    + ratear(): Map<Integer, Long>
+  }
+
+  class Dinheiro {
+    + parse(textoValor: String): long {static}
+    + formatar(centavos: long): String {static}
+  }
+
+  class "Validação" as Validacao {
+    - serialVersionUID: long = 1L {static}
+    + Validação(mensagem: String)
+  }
+
+}
+
+' ---- relações
+Despesa <|-- DespesaFixa
+Despesa <|-- DespesaPorPessoa
+Exception <|-- Validacao
+Persistencia <|.. PersistenciaArquivo
+ActionListener <|.. Ui
+Serializable <|.. Planejamento
+Serializable <|.. Participante
+Serializable <|.. Despesa
+Planejamento "1" *--> "0..*" Participante
+Planejamento "1" *--> "0..*" Despesa : despesas
+Despesa "0..*" --> "1..*" Participante
+Ui --> "1" Controlador : controlador
+Controlador --> "1" Planejamento : planejamento
+Controlador --> "1" Persistencia : persistencia
+Main ..> Ui : <<instantiate>>
+Main ..> Controlador : <<instantiate>>
+Main ..> PersistenciaArquivo : <<instantiate>>
+Persistencia ..> Planejamento
+Participante ..> Dinheiro
+
+@enduml
