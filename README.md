@@ -53,4 +53,15 @@ O caso de referência e cenários adicionais estão em [docs/roteiro-validacao.m
 
 O repositório não substitui o relatório. A proposta pede PDF técnico de até 10 páginas, em uma coluna e no padrão ABNT, com nomes completos e matrículas, objetivo, link do GitHub, modelagem, implementação, testes e resultados, avaliação, melhorias, referências e contribuição individual. Use [docs/modelo-relatorio.md](docs/modelo-relatorio.md) como roteiro. Cada integrante deve enviar o PDF no AVA.
 
+## Integrantes e contribuições
+
+| Integrante | Contribuição principal |
+|---|---|
+| Anderson Bezerra de Menezes | Concepção, elaboração, formatação, revisão e validação do relatório em PDF; criação, configuração e formatação do repositório GitHub. |
+| Lilian Maria Jacob de Oliveira | Organização dos materiais de entrega e conferência da documentação do projeto. |
+| Maria da Graça Araújo Ferrer | Concepção, elaboração, formatação, revisão e validação do relatório em PDF. |
+| Matheus Almeida de Holanda | Criação, concepção, edição e revisão do diagrama de classes UML. |
+| Mateus Morais Tabosa Barroso | Concepção e desenvolvimento do código da aplicação. |
+| Thiago Pessoa Oliveira da Silva | Execução de testes funcionais, conferência dos resultados e organização das evidências. |
+
 
