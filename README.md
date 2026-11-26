@@ -53,16 +53,4 @@ O caso de referência e cenários adicionais estão em [docs/roteiro-validacao.m
 
 O repositório não substitui o relatório. A proposta pede PDF técnico de até 10 páginas, em uma coluna e no padrão ABNT, com nomes completos e matrículas, objetivo, link do GitHub, modelagem, implementação, testes e resultados, avaliação, melhorias, referências e contribuição individual. Use [docs/modelo-relatorio.md](docs/modelo-relatorio.md) como roteiro. Cada integrante deve enviar o PDF no AVA.
 
-## Publicar pelo GitHub Desktop
-
-1. Entre na conta da equipe no GitHub Desktop.
-2. Selecione **File > Add local repository...** e escolha a pasta que contém este README.
-3. A pasta já foi inicializada como repositório Git na branch `main`. Se o aplicativo não a reconhecer, confirme que escolheu a pasta que contém este README e a pasta oculta `.git`. Mantenha o `.gitignore` existente; não escolha outro. Não é necessária uma licença automática.
-4. Em **Changes**, confira a lista: não inclua `bin/`, arquivos `.class`, dados reais ou arquivos pessoais. Faça um commit inicial, por exemplo `Organiza projeto e documenta atividade`.
-5. Clique **Publish repository** e escolha um nome simples, como `cabe-no-bolso-poo`. A proposta exige que o avaliador consiga acessar: use público se permitido pela equipe/instituição; se for privado, convide o avaliador e confirme o acesso.
-6. Copie a URL publicada para a primeira página do relatório. Após novas alterações, faça commit e **Push origin**.
-
-Não reutilize um repositório de nome parecido encontrado na busca. Publique no repositório da equipe e confira proprietário, visibilidade e URL antes de divulgar o link.
-
-
 
