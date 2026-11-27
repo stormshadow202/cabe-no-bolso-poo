@@ -61,17 +61,45 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 
 <img width="1285" height="1858" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/bd53b666-fd97-4409-858f-9a93c2115be3" />
 
-| Legenda |
-| :---: |
-
-| Categoria | Notação | Significado |
-| :---: | :---: | :---: |
-| Visibilidade | `+` / `-` / `#` | `public` / `private` / `protected` |
-| Estilos | *Itálico* / Sublinhado | Abstrato (classe ou método) / `static` |
-| Relações | `──▶` / `- -▶` | Associação / Dependência (`<<instantiate>>`) |
-| Hierarquia | `──▷` / `- -▷` | Herança / Implementação de interface |
-| Multiplicidade | `1` / `0..*` / `1..*` | Exato / Zero ou muitos / Um ou muitos |
-
+<table>
+  <thead>
+    <tr>
+      <th colspan="3" align="center">Legenda</th>
+    </tr>
+    <tr>
+      <th align="center">Categoria</th>
+      <th align="center">Notação</th>
+      <th align="center">Significado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Visibilidade</td>
+      <td><code>+</code> / <code>-</code> / <code>#</code></td>
+      <td><code>public</code> / <code>private</code> / <code>protected</code></td>
+    </tr>
+    <tr>
+      <td>Estilos</td>
+      <td><em>Itálico</em> / Sublinhado</td>
+      <td>Abstrato (classe ou método) / <code>static</code></td>
+    </tr>
+    <tr>
+      <td>Relações</td>
+      <td><code>──▶</code> / <code>- -▶</code></td>
+      <td>Associação / Dependência (<code>&lt;&lt;instantiate&gt;&gt;</code>)</td>
+    </tr>
+    <tr>
+      <td>Hierarquia</td>
+      <td><code>──▷</code> / <code>- -▷</code></td>
+      <td>Herança / Implementação de interface</td>
+    </tr>
+    <tr>
+      <td>Multiplicidade</td>
+      <td><code>1</code> / <code>0..*</code> / <code>1..*</code></td>
+      <td>Exato / Zero ou muitos / Um ou muitos</td>
+    </tr>
+  </tbody>
+</table>
 ### 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
 
