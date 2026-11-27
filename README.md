@@ -63,8 +63,6 @@ cabe-no-bolso-poo-grupo-6-main
 
 
 
-As classes compiladas ficam em `bin/` e não devem ser enviadas ao GitHub. A aplicação salva o planejamento em arquivos `.dat`; use somente dados fictícios e não publique dados pessoais.
-
 ## Funcionalidades
 
 - Cadastrar participantes com código, nome e orçamento; alterar nome e orçamento.
@@ -73,7 +71,6 @@ As classes compiladas ficam em `bin/` e não devem ser enviadas ao GitHub. A apl
 - Exibir custo total, total individual e excedente do orçamento.
 - Salvar e carregar o planejamento completo em arquivo local.
 
-O caso de referência e cenários adicionais estão em [docs/roteiro-validacao.md](docs/roteiro-validacao.md). O UML editável está em [docs/diagrama-classes.puml](docs/diagrama-classes.puml). Preencha os resultados observados e guarde capturas em `evidencias/` antes de entregar.
 
 ## Relatório obrigatório
 
