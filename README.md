@@ -55,6 +55,11 @@ cabe-no-bolso-poo-grupo-6-main
 
 ##  Decisões de Modelagem e Arquitetura
 
+## Diagrama de classes UML
+
+<img width="1430" height="1929" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/4af7c41a-59da-4d37-873b-0e73979b3765" />
+
+
 O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Controller)**, dividido em pacotes com responsabilidades bem delimitadas e aplicando os principais pilares da Programação Orientada a Objetos (POO).
 
 
