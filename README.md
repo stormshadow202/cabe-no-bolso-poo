@@ -100,6 +100,8 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
     </tr>
   </tbody>
 </table>
+
+
 ### 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
 
