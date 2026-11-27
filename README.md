@@ -152,11 +152,11 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 
 | Integrante | Contribuição principal |
 |---|---|
-| Anderson Bezerra de Menezes | Concepção, elaboração, formatação, revisão e validação do relatório em PDF; criação, configuração e formatação do repositório GitHub. |
-| Lilian Maria Jacob de Oliveira | Organização dos materiais de entrega e conferência da documentação do projeto. |
-| Maria da Graça Araújo Ferrer | Concepção, elaboração, formatação, revisão e validação do relatório em PDF. |
-| Matheus Almeida de Holanda | Criação, concepção, edição e revisão do diagrama de classes UML. |
-| Mateus Morais Tabosa Barroso | Concepção e desenvolvimento do código da aplicação. |
-| Thiago Pessoa Oliveira da Silva | Execução de testes funcionais, conferência dos resultados e organização das evidências. |
+| Anderson Bezerra de Menezes | Implementação/integração: criação, configuração e organização do repositório GitHub. Validação: organização das evidências e conferência dos testes. Documentação: concepção, elaboração, formatação e revisão do relatório em PDF.  |
+| Lilian Maria Jacob de Oliveira | Implementação/integração: integração do material de entrega (código, arquivo de exemplo e relatório). Validação: execução e conferência dos resultados dos testes. Documentação: organização e conferência da documentação do projeto.  |
+| Maria da Graça Araújo Ferrer | Implementação/integração: integração das figuras, tabelas e resultados ao relatório. Validação: execução e conferência dos resultados dos testes. Documentação: concepção, elaboração, formatação e revisão do relatório em PDF. |
+| Matheus Almeida de Holanda | Implementação/integração: criação e edição do diagrama de classes UML e contribuições ao repositório do GitHub. Validação: revisão do diagrama em relação ao código. Documentação: revisão do diagrama no relatório.  |
+| Mateus Morais Tabosa Barroso | Implementação/integração: concepção e desenvolvimento do código da aplicação. Validação: verificação do funcionamento do código durante o desenvolvimento. Documentação: apoio na descrição técnica da implementação.  |
+| Thiago Pessoa Oliveira da Silva | Implementação/integração: integração das telas e das regras para a execução dos testes. Validação: execução dos testes funcionais e conferência dos resultados. Documentação: registro dos resultados obtidos. |
 
 
