@@ -28,9 +28,9 @@ A aplicação abre uma janela Swing. No VS Code, instale também a extensão Ext
 cabe-no-bolso-poo-grupo-6-main
 ├── .vscode/                           #configuração opcional do VS Code
 ├── docs/
+│   ├── Class Diagram0.asta            # Arquivo-fonte do Astah: diagrama de classes editável
 │   ├── Diagrama de Classes.png        # Imagem do Diagrama de Classes UML
-│   ├── Diagrama de Classes.puml       # Código-fonte (PlantUML) do diagrama     
-│   ├── modelo-relatorio.md            # Modelo do relatório técnico
+│   ├── Diagrama de Classes.puml       # Código-fonte (PlantUML) do diagrama
 ├── evidencias/                        # Capturas legíveis dos cenários executados
 ├── src/                               # Fontes Java em pacotes MVC
 │   ├── controlador/                   # Encaminha as ações da tela ao modelo
