@@ -52,6 +52,7 @@ cabe-no-bolso-poo-grupo-6-main
 
 ```
 
+##1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
 | Pacote | Responsabilidade (MVC) | Classes |
 | :--- | :--- | :--- |
@@ -60,6 +61,21 @@ cabe-no-bolso-poo-grupo-6-main
 | `controlador` | Encaminha as ações da tela ao modelo e devolve à visão o resultado ou a mensagem de erro. | `Controlador` |
 | `persistencia` | Define o contrato `salvar` / `carregar` e o implementa com serialização em arquivo. | `Persistencia`, `PersistenciaArquivo` |
 | `(pacote padrão)` | Cria o controlador, injeta a persistência e abre a interface. | `Main` |
+
+##2. Herança e Polimorfismo
+Hierarquia de Despesa: Despesa atua como classe base (em itálico no diagrama, indicando abstração), com um método abstrato # ratear() : Map<Integer, Long> (também em itálico). As subclasses DespesaFixa e DespesaPorPessoa herdam de Despesa e implementam ratear() de formas distintas conforme a regra de divisão do custo.
+
+Polimorfismo em tempo de execução: Planejamento armazena uma lista de Despesa (- despesas : ArrayList<Despesa>), permitindo tratar DespesaFixa e DespesaPorPessoa de maneira uniforme ao calcular custos e contribuições, delegando o cálculo específico ao ratear() concreto de cada instância.
+
+Exceção de domínio (Validação): Estende java.lang.Exception, permitindo sinalizar falhas de regra de negócio/entrada de forma explícita e tipada.
+
+##3. Encapsulamento e Invariantes
+Atributos privados (-) e métodos protegidos (#) / públicos (+): Os estados internos das entidades (como codigo, nome, orcamentoCentavos em Participante e descricao, valorCentavos, participantes em Despesa) são privados, expondo acesso controlado via getters e operações específicas.
+
+Validação centralizada no modelo: Participante possui métodos internos (- validarNome(...), - validarOrcamento(...)) e Planejamento possui - validarParticipantes(Despesa), garantindo que objetos inválidos ou inconsistentes não entrem no domínio.
+
+Representação monetária em centavos (long): Valores financeiros (orcamentoCentavos, valorCentavos, retornos de totais/rateios) usam long para evitar problemas de precisão de ponto flutuante, enquanto Dinheiro centraliza a conversão (parse(String)) e a formatação (formatar(long)).
+
 
 
 
@@ -70,6 +86,8 @@ cabe-no-bolso-poo-grupo-6-main
 - Ratear despesas fixas em centavos; os centavos restantes são distribuídos pela ordem crescente dos códigos. Despesas “Por pessoa” cobram o valor unitário de cada participante selecionado.
 - Exibir custo total, total individual e excedente do orçamento.
 - Salvar e carregar o planejamento completo em arquivo local.
+
+
 
 
 ## Relatório obrigatório
