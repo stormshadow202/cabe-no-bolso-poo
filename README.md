@@ -55,12 +55,21 @@ cabe-no-bolso-poo-grupo-6-main
 
 ##  Decisões de Modelagem e Arquitetura
 
+O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Controller)**, dividido em pacotes com responsabilidades bem delimitadas e aplicando os principais pilares da Programação Orientada a Objetos (POO).
+
 ## Diagrama de classes UML
 
 <img width="1430" height="1929" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/4af7c41a-59da-4d37-873b-0e73979b3765" />
 
+| Categoria | Notação | Significado |
+| :--- | :--- | :--- |
+| **Visibilidade** | `+` / `-` / `#` | `public` / `private` / `protected` |
+| **Estilos** | *Itálico* / <u>Sublinhado</u> | Abstrato (classe ou método) / `static` |
+| **Relações** | `──▶` / `- -▶` | Associação / Dependência (`<<instantiate>>`) |
+| **Hierarquia** | `──▷` / `- -▷` | Herança / Implementação de interface |
+| **Multiplicidade** | `1` / `0..*` / `1..*` | Exato / Zero ou muitos / Um ou muitos |
 
-O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Controller)**, dividido em pacotes com responsabilidades bem delimitadas e aplicando os principais pilares da Programação Orientada a Objetos (POO).
+
 
 
 ### 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
