@@ -25,16 +25,20 @@ A aplicação abre uma janela Swing. No VS Code, instale também a extensão Ext
 ## Estrutura
 
 ```text
-src/                    fontes Java em pacotes MVC
-  Main.java
-  controlador/
-  modelo/
-  persistencia/
-  visão/
-docs/                   UML, roteiro de validação e modelo do relatório
-evidencias/             capturas legíveis dos cenários executados
-lib/                    dependências externas, se adicionadas
-.vscode/                configuração opcional do VS Code
+cabe-no-bolso-poo-grupo-6-main
+├---.vscode/                           configuração opcional do VS Code
+├---docs/
+    ├---Diagrama de Classes.png       Imagem do Diagrama de Classes UML
+    ├---Diagrama de Classes.puml      Codigo Fonte do Diagrama           
+    ├---modelo-relatorio.md 
+├---evidencias/                       capturas legíveis dos cenários executados
+├---src/                              fontes Java em pacotes MVC
+    ├---controlador/
+    ├---modelo/
+    ├---persistencia/
+    ├---visão/
+├---Main.java
+
 ```
 
 As classes compiladas ficam em `bin/` e não devem ser enviadas ao GitHub. A aplicação salva o planejamento em arquivos `.dat`; use somente dados fictícios e não publique dados pessoais.
