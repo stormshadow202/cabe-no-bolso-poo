@@ -52,6 +52,7 @@ cabe-no-bolso-poo-grupo-6-main
 
 ```
 
+
 ##  Decisões de Modelagem e Arquitetura
 
 O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Controller)**, dividido em pacotes com responsabilidades bem delimitadas e aplicando os principais pilares da Programação Orientada a Objetos (POO).
