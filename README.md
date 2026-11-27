@@ -39,7 +39,7 @@ cabe-no-bolso-poo-grupo-6-main
 │   │   ├── Despesa.java
 │   │   ├── DespesaFixa.java
 │   │   ├── DespesaPorPessoa.java
-│   │   ├── Dinheiro
+│   │   ├── Dinheiro.java
 │   │   ├── Participante.java
 │   │   ├── Planejamento.java
 │   │   ├── Validação.java
