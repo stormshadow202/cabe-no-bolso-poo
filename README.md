@@ -80,6 +80,16 @@ cabe-no-bolso-poo-grupo-6-main
 - Representação monetária em centavos (long): Valores financeiros (orcamentoCentavos, valorCentavos, retornos de totais/rateios) usam long para evitar problemas de precisão de ponto flutuante, enquanto Dinheiro centraliza a conversão (parse(String)) e a formatação (formatar(long)).
 
 
+### 4. Interface de Persistência e Serialização
+* **Inversão de Dependência (`Persistencia`)**: O `Controlador` depende da interface `Persistencia` (`salvar` e `carregar`), e não de uma implementação concreta. Isso permite alterar o mecanismo de armazenamento (ex.: banco de dados ou JSON) sem impactar o controlador ou a interface.
+* **Implementação em Arquivo (`PersistenciaArquivo`)**: Implementa o contrato `Persistencia` utilizando serialização nativa do Java em `File`.
+* **Serialização (`Serializable`)**: As entidades do modelo (`Planejamento`, `Participante`, `Despesa`, `DespesaFixa` e `DespesaPorPessoa`) implementam `Serializable` (com `serialVersionUID = 1L`), habilitando a persistência direta do grafo de objetos.
+
+### 5. Associações e Estruturas de Dados
+* **Coleções Genéricas**:
+  * `Planejamento` utiliza `TreeMap<Integer, Participante>` para armazenar participantes indexados pelo código, garantindo busca eficiente e ordenação automática pelas chaves.
+  * `Planejamento` armazena as despesas em `ArrayList<Despesa>`, e cada `Despesa` mantém uma `List<Participante>` com os envolvidos no rateio.
+* **Relacionamentos entre Camadas**: `Main` instancia `Ui` e `Controlador`; `Ui` mantém referência para `Controlador`; `Controlador` orquestra `Planejamento` e `Persistencia`; e `Dinheiro` atua como classe de apoio para formatação e leitura de valores monetários.
 
 
 ## Funcionalidades
