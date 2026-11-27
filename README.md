@@ -52,7 +52,12 @@ cabe-no-bolso-poo-grupo-6-main
 
 ```
 
-## 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
+##  Decisões de Modelagem e Arquitetura
+
+O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Controller)**, dividido em pacotes com responsabilidades bem delimitadas e aplicando os principais pilares da Programação Orientada a Objetos (POO).
+
+
+### 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
 
 | Pacote | Responsabilidade (MVC) | Classes |
@@ -63,21 +68,16 @@ cabe-no-bolso-poo-grupo-6-main
 | `persistencia` | Define o contrato `salvar` / `carregar` e o implementa com serialização em arquivo. | `Persistencia`, `PersistenciaArquivo` |
 | `(pacote padrão)` | Cria o controlador, injeta a persistência e abre a interface. | `Main` |
 
-## 2. Herança e Polimorfismo
 
-- Hierarquia de Despesa: Despesa atua como classe base (em itálico no diagrama, indicando abstração), com um método abstrato # ratear() : Map<Integer, Long> (também em itálico). As subclasses DespesaFixa e DespesaPorPessoa herdam de Despesa e implementam ratear() de formas distintas conforme a regra de divisão do custo.
+### 2. Herança e Polimorfismo
+* **Hierarquia de `Despesa`**: A classe abstrata `Despesa` define a estrutura base e o contrato abstrato `# ratear(): Map<Integer, Long>`. As subclasses **`DespesaFixa`** e **`DespesaPorPessoa`** herdam de `Despesa` e fornecem implementações específicas para o cálculo de divisão de custos.
+* **Polimorfismo**: `Planejamento` mantém uma coleção genérica de `Despesa` (`ArrayList<Despesa>`), permitindo calcular totais e contribuições individuais de forma uniforme, delegando a regra de rateio para cada tipo concreto em tempo de execução.
+* **Exceção de Domínio (`Validação`)**: Estende `java.lang.Exception` para representar e propagar erros de regra de negócio e validação de forma clara.
 
-- Polimorfismo em tempo de execução: Planejamento armazena uma lista de Despesa (- despesas : ArrayList<Despesa>), permitindo tratar DespesaFixa e DespesaPorPessoa de maneira uniforme ao calcular custos e contribuições, delegando o cálculo específico ao ratear() concreto de cada instância.
-
-- Exceção de domínio (Validação): Estende java.lang.Exception, permitindo sinalizar falhas de regra de negócio/entrada de forma explícita e tipada.
-
-## 3. Encapsulamento e Invariantes
-
-- Atributos privados (-) e métodos protegidos (#) / públicos (+): Os estados internos das entidades (como codigo, nome, orcamentoCentavos em Participante e descricao, valorCentavos, participantes em Despesa) são privados, expondo acesso controlado via getters e operações específicas.
-
-- Validação centralizada no modelo: Participante possui métodos internos (- validarNome(...), - validarOrcamento(...)) e Planejamento possui - validarParticipantes(Despesa), garantindo que objetos inválidos ou inconsistentes não entrem no domínio.
-
-- Representação monetária em centavos (long): Valores financeiros (orcamentoCentavos, valorCentavos, retornos de totais/rateios) usam long para evitar problemas de precisão de ponto flutuante, enquanto Dinheiro centraliza a conversão (parse(String)) e a formatação (formatar(long)).
+### 3. Encapsulamento e Integridade do Domínio
+* **Proteção de Estado**: Os atributos das classes de modelo (`codigo`, `nome`, `orcamentoCentavos`, `descricao`, `valorCentavos`, `participantes`, etc.) são `private`, sendo acessados ou modificados apenas por meio de métodos controlados.
+* **Validações Internas**: Métodos privados como `validarNome()`, `validarOrcamento()` (em `Participante`) e `validarParticipantes()` (em `Planejamento`) asseguram que o estado dos objetos permaneça sempre consistente.
+* **Precisão Monetária**: Todos os valores financeiros são manipulados internamente em centavos utilizando o tipo `long`, evitando erros de arredondamento de ponto flutuante. A classe utilitária `Dinheiro` centraliza a conversão (`parse`) e a formatação (`formatar`).
 
 
 ### 4. Interface de Persistência e Serialização
