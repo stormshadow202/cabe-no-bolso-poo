@@ -59,7 +59,8 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 
 ## Diagrama de classes UML
 
-<img width="1430" height="1929" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/4af7c41a-59da-4d37-873b-0e73979b3765" />
+<img width="1285" height="1858" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/bd53b666-fd97-4409-858f-9a93c2115be3" />
+
 
 | Categoria | Notação | Significado |
 | :--- | :--- | :--- |
