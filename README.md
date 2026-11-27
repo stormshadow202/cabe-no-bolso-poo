@@ -65,14 +65,12 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 | :---: |
 
 | Categoria | Notação | Significado |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | Visibilidade | `+` / `-` / `#` | `public` / `private` / `protected` |
 | Estilos | *Itálico* / Sublinhado | Abstrato (classe ou método) / `static` |
 | Relações | `──▶` / `- -▶` | Associação / Dependência (`<<instantiate>>`) |
 | Hierarquia | `──▷` / `- -▷` | Herança / Implementação de interface |
 | Multiplicidade | `1` / `0..*` / `1..*` | Exato / Zero ou muitos / Um ou muitos |
-
-
 
 ### 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
