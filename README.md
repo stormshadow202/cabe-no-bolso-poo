@@ -119,10 +119,6 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 
 
 
-## Relatório obrigatório
-
-O repositório não substitui o relatório. A proposta pede PDF técnico de até 10 páginas, em uma coluna e no padrão ABNT, com nomes completos e matrículas, objetivo, link do GitHub, modelagem, implementação, testes e resultados, avaliação, melhorias, referências e contribuição individual. Use [docs/modelo-relatorio.md](docs/modelo-relatorio.md) como roteiro. Cada integrante deve enviar o PDF no AVA.
-
 ## Integrantes e contribuições
 
 | Integrante | Contribuição principal |
