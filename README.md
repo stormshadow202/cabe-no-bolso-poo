@@ -54,6 +54,7 @@ cabe-no-bolso-poo-grupo-6-main
 
 ## 1. Arquitetura e Separação de Responsabilidades (MVC + Pacotes)
 
+
 | Pacote | Responsabilidade (MVC) | Classes |
 | :--- | :--- | :--- |
 | `modelo` | Calcula e valida. Guarda participantes e despesas em coleções genéricas. | `Planejamento`, `Participante`, `Despesa`, `DespesaFixa`, `DespesaPorPessoa`, `Dinheiro`, `Validação` |
@@ -64,19 +65,19 @@ cabe-no-bolso-poo-grupo-6-main
 
 ## 2. Herança e Polimorfismo
 
-Hierarquia de Despesa: Despesa atua como classe base (em itálico no diagrama, indicando abstração), com um método abstrato # ratear() : Map<Integer, Long> (também em itálico). As subclasses DespesaFixa e DespesaPorPessoa herdam de Despesa e implementam ratear() de formas distintas conforme a regra de divisão do custo.
+- Hierarquia de Despesa: Despesa atua como classe base (em itálico no diagrama, indicando abstração), com um método abstrato # ratear() : Map<Integer, Long> (também em itálico). As subclasses DespesaFixa e DespesaPorPessoa herdam de Despesa e implementam ratear() de formas distintas conforme a regra de divisão do custo.
 
-Polimorfismo em tempo de execução: Planejamento armazena uma lista de Despesa (- despesas : ArrayList<Despesa>), permitindo tratar DespesaFixa e DespesaPorPessoa de maneira uniforme ao calcular custos e contribuições, delegando o cálculo específico ao ratear() concreto de cada instância.
+- Polimorfismo em tempo de execução: Planejamento armazena uma lista de Despesa (- despesas : ArrayList<Despesa>), permitindo tratar DespesaFixa e DespesaPorPessoa de maneira uniforme ao calcular custos e contribuições, delegando o cálculo específico ao ratear() concreto de cada instância.
 
-Exceção de domínio (Validação): Estende java.lang.Exception, permitindo sinalizar falhas de regra de negócio/entrada de forma explícita e tipada.
+- Exceção de domínio (Validação): Estende java.lang.Exception, permitindo sinalizar falhas de regra de negócio/entrada de forma explícita e tipada.
 
 ## 3. Encapsulamento e Invariantes
 
-Atributos privados (-) e métodos protegidos (#) / públicos (+): Os estados internos das entidades (como codigo, nome, orcamentoCentavos em Participante e descricao, valorCentavos, participantes em Despesa) são privados, expondo acesso controlado via getters e operações específicas.
+- Atributos privados (-) e métodos protegidos (#) / públicos (+): Os estados internos das entidades (como codigo, nome, orcamentoCentavos em Participante e descricao, valorCentavos, participantes em Despesa) são privados, expondo acesso controlado via getters e operações específicas.
 
-Validação centralizada no modelo: Participante possui métodos internos (- validarNome(...), - validarOrcamento(...)) e Planejamento possui - validarParticipantes(Despesa), garantindo que objetos inválidos ou inconsistentes não entrem no domínio.
+- Validação centralizada no modelo: Participante possui métodos internos (- validarNome(...), - validarOrcamento(...)) e Planejamento possui - validarParticipantes(Despesa), garantindo que objetos inválidos ou inconsistentes não entrem no domínio.
 
-Representação monetária em centavos (long): Valores financeiros (orcamentoCentavos, valorCentavos, retornos de totais/rateios) usam long para evitar problemas de precisão de ponto flutuante, enquanto Dinheiro centraliza a conversão (parse(String)) e a formatação (formatar(long)).
+- Representação monetária em centavos (long): Valores financeiros (orcamentoCentavos, valorCentavos, retornos de totais/rateios) usam long para evitar problemas de precisão de ponto flutuante, enquanto Dinheiro centraliza a conversão (parse(String)) e a formatação (formatar(long)).
 
 
 
