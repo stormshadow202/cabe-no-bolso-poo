@@ -28,27 +28,27 @@ A aplicação abre uma janela Swing. No VS Code, instale também a extensão Ext
 cabe-no-bolso-poo-grupo-6-main
 ├── .vscode/                           #configuração opcional do VS Code
 ├── docs/
-│   ├── Diagrama de Classes.png       #Imagem do Diagrama de Classes UML
-│   ├── Diagrama de Classes.puml      #Codigo Fonte do Diagrama           
-│   ├── modelo-relatorio.md 
-├── evidencias/                        #capturas legíveis dos cenários executados
-├── src/                               #fontes Java em pacotes MVC
-│   ├── controlador/
-│   │   ├── controlador.java
-│   ├── modelo/
-│   │   ├── Despesa.java
-│   │   ├── DespesaFixa.java
-│   │   ├── DespesaPorPessoa.java
-│   │   ├── Dinheiro.java
-│   │   ├── Participante.java
-│   │   ├── Planejamento.java
-│   │   ├── Validação.java
-│   ├── persistencia/
-│   │   ├── Persistencia.java
-│   │   ├── PersistenciaArquivo.java
-│   ├── visão/
-│   │   ├── Ui.java
-├── Main.java
+│   ├── Diagrama de Classes.png        # Imagem do Diagrama de Classes UML
+│   ├── Diagrama de Classes.puml       # Código-fonte (PlantUML) do diagrama     
+│   ├── modelo-relatorio.md            # Modelo do relatório técnico
+├── evidencias/                        # Capturas legíveis dos cenários executados
+├── src/                               # Fontes Java em pacotes MVC
+│   ├── controlador/                   # Encaminha as ações da tela ao modelo
+│   │   ├── Controlador.java           # Converte os textos da tela, chama o modelo e a persistência
+│   ├── modelo/                        # Guarda os dados, calcula e valida
+│   │   ├── Despesa.java               # Classe abstrata: descrição, valor, participantes e ratear()
+│   │   ├── DespesaFixa.java           # Divide o valor entre os selecionados (centavos pela ordem dos códigos)
+│   │   ├── DespesaPorPessoa.java      # Dada selecionado paga o valor unitário
+│   │   ├── Dinheiro.java              # Donverte texto em centavos e centavos em texto
+│   │   ├── Participante.java          # Código, nome e orçamento, com validação
+│   │   ├── Planejamento.java          # Guarda participantes e despesas; calcula totais e excedentes
+│   │   ├── Validação.java             # Exceção lançada quando uma regra é violada
+│   ├── persistencia/                  # Contrato e implementação de salvar/carregar
+│   │   ├── Persistencia.java          # Interface com salvar e carregar
+│   │   ├── PersistenciaArquivo.java   # Implementa a interface por serialização em arquivo
+│   ├── visão/                         # Interface gráfica
+│   │   ├── Ui.java                    # Janela Swing: recebe entradas, mostra resultados e mensagens
+├── Main.java                          # Ponto de entrada: cria o controlador e a persistência e abre a janela
 
 ```
 
