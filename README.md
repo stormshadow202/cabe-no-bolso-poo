@@ -26,18 +26,18 @@ A aplicação abre uma janela Swing. No VS Code, instale também a extensão Ext
 
 ```text
 cabe-no-bolso-poo-grupo-6-main
-├---.vscode/                           configuração opcional do VS Code
-├---docs/
-    ├---Diagrama de Classes.png       Imagem do Diagrama de Classes UML
-    ├---Diagrama de Classes.puml      Codigo Fonte do Diagrama           
-    ├---modelo-relatorio.md 
-├---evidencias/                       capturas legíveis dos cenários executados
-├---src/                              fontes Java em pacotes MVC
-    ├---controlador/
-    ├---modelo/
-    ├---persistencia/
-    ├---visão/
-├---Main.java
+├──.vscode/                           configuração opcional do VS Code
+├──docs/
+│    ├──Diagrama de Classes.png       Imagem do Diagrama de Classes UML
+│    ├──Diagrama de Classes.puml      Codigo Fonte do Diagrama           
+│    ├──modelo-relatorio.md 
+├──evidencias/                       capturas legíveis dos cenários executados
+├──src/                              fontes Java em pacotes MVC
+│    ├──controlador/
+│    ├──modelo/
+│    ├──persistencia/
+│    ├──visão/
+├──Main.java
 
 ```
 
