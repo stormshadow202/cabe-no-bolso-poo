@@ -62,8 +62,8 @@ O projeto foi estruturado seguindo o padrão arquitetural **MVC (Model-View-Cont
 <img width="1285" height="1858" alt="Diagrama de Classes" src="https://github.com/user-attachments/assets/bd53b666-fd97-4409-858f-9a93c2115be3" />
 
 | Legenda |
-| Categoria | Notação | Significado |
 | :--- | :--- | :--- |
+| Categoria | Notação | Significado |
 | **Visibilidade** | `+` / `-` / `#` | `public` / `private` / `protected` |
 | **Estilos** | *Itálico* / <u>Sublinhado</u> | Abstrato (classe ou método) / `static` |
 | **Relações** | `──▶` / `- -▶` | Associação / Dependência (`<<instantiate>>`) |
