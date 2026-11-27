@@ -22,7 +22,7 @@ java -cp bin Main
 
 A aplicação abre uma janela Swing. No VS Code, instale também a extensão Extension Pack for Java para suporte ao projeto.
 
-## Estrutura
+## Estrutura do Projeto
 
 ```text
 cabe-no-bolso-poo-grupo-6-main
