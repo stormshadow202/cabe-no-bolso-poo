@@ -52,6 +52,17 @@ cabe-no-bolso-poo-grupo-6-main
 
 ```
 
+
+| Pacote | Responsabilidade (MVC) | Classes |
+| :--- | :--- | :--- |
+| `modelo` | Calcula e valida. Guarda participantes e despesas em coleções genéricas (`TreeMap` e `ArrayList`). | `Planejamento`, `Participante`, `Despesa`, `DespesaFixa`, `DespesaPorPessoa`, `Dinheiro`, `Validação` |
+| `visão` | Recebe as entradas do usuário e mostra resultados e mensagens. | `Ui` |
+| `controlador` | Encaminha as ações da tela ao modelo e devolve à visão o resultado ou a mensagem de erro. | `Controlador` |
+| `persistencia` | Define o contrato `salvar` / `carregar` e o implementa com serialização em arquivo. | `Persistencia`, `PersistenciaArquivo` |
+| `(pacote padrão)` | Cria o controlador, injeta a persistência e abre a interface. | `Main` |
+
+
+
 As classes compiladas ficam em `bin/` e não devem ser enviadas ao GitHub. A aplicação salva o planejamento em arquivos `.dat`; use somente dados fictícios e não publique dados pessoais.
 
 ## Funcionalidades
