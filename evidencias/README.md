@@ -1,1 +1,0 @@
-Guarde aqui somente capturas legíveis dos cenários executados com dados fictícios. Relacione os arquivos ao roteiro em `../docs/roteiro-validacao.md` e às legendas do relatório. Não inclua dados pessoais.
